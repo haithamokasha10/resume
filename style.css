@@ -1,0 +1,306 @@
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #000000;
+}
+
+
+.navbar {
+    background: linear-gradient(300deg, #000000, #4b0082, #9400d3, #4b0082, #000000);
+    background-size: 180% 180%;
+    animation: gradient-animation 12s ease infinite;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 15px;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-nav li a {
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-nav li {
+    padding-right: 35px;
+}
+
+.navbar-nav li a:hover {
+    color: gray;
+    text-decoration: line-through;
+}
+
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+.personal-img {
+    height: 400px;
+    border-radius: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: conic-gradient(
+        from var(--angle),
+        black,
+        #4b0082,
+        #ce5deb,
+        #ce5deb,
+        #4b0082,
+        black
+    );
+    border-radius: 50px;
+    z-index: 0;
+    animation: rotateColors 6s linear infinite;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: conic-gradient(
+        from var(--angle),
+        black,
+        #4b0082,
+        #ce5deb,
+        #ce5deb,
+        #4b0082,
+        black
+    );
+    border-radius: 50px;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.5;
+    animation: rotateColors 6s linear infinite;
+}
+
+@keyframes rotateColors {
+    0% {
+        --angle: 0deg;
+    }
+    100% {
+        --angle: 360deg;
+    }
+}
+
+
+
+/* Mid Section Heading */
+#mid-section-h1 {
+    color: white;
+}
+
+#mid-section-h1 span {
+    font-size: 4rem;
+    background: linear-gradient(300deg, #4b0082, #9400d3, #ba55d3, #9400d3, #4b0082);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Lead Text */
+.lead {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: black;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #9400d3;
+}
+
+.social-links svg {
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
+/* ---------- Added sections (same purple/black theme) ---------- */
+html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+
+.type-cursor { color: #ce5deb; animation: blinkCursor 1s steps(1) infinite; }
+@keyframes blinkCursor { 50% { opacity: 0; } }
+
+.btn-purple {
+    display: inline-block;
+    padding: 10px 26px;
+    margin-top: 6px;
+    border: 0;
+    border-radius: 30px;
+    background: linear-gradient(300deg, #4b0082, #9400d3, #ba55d3);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-purple:hover { color: white; filter: brightness(1.15); }
+
+.content-section { padding: 30px 0; }
+
+.panel {
+    background: rgba(0, 0, 0, 0.78);
+    border: 1px solid #4b0082;
+    border-radius: 30px;
+    padding: 40px;
+    color: white;
+}
+.panel a { color: #ce5deb; }
+.panel a:hover { color: #ba55d3; }
+.panel h3 { font-size: 1.15rem; font-weight: bold; }
+.panel .lead { font-size: 1.05rem; }
+
+.section-title { margin-bottom: 20px; }
+.section-title span {
+    font-size: 2.6rem;
+    font-weight: bold;
+    background: linear-gradient(300deg, #4b0082, #9400d3, #ba55d3, #9400d3, #4b0082);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradientShift 10s ease infinite;
+}
+
+.timeline { border-left: 2px solid #9400d3; margin: 28px 0 10px; padding-left: 28px; }
+.job { position: relative; margin-bottom: 30px; }
+.job::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 7px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ce5deb;
+    border: 3px solid #000;
+}
+.job .where { color: #c9b6d9; margin: -4px 0 8px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
+.tags li {
+    border: 1px solid #9400d3;
+    border-radius: 999px;
+    padding: 3px 14px;
+    font-size: 0.95rem;
+}
+
+.proj {
+    height: 100%;
+    border: 1px solid #4b0082;
+    border-left: 5px solid #9400d3;
+    border-radius: 20px;
+    padding: 20px;
+    background: rgba(75, 0, 130, 0.18);
+}
+.proj .tool { color: #ce5deb; font-weight: bold; margin: -4px 0 8px; }
+.proj p:last-child { margin-bottom: 0; }
+
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { margin-bottom: 14px; }
+.contact-list strong { display: block; }
+#contactForm .form-control {
+    background: #0b0b0b;
+    border: 1px solid #4b0082;
+    color: white;
+}
+#contactForm .form-control:focus { border-color: #ce5deb; box-shadow: 0 0 0 .2rem rgba(148, 0, 211, .35); }
+
+.site-footer { text-align: center; color: #c9b6d9; padding: 30px 0; }
+
+a:focus-visible, button:focus-visible { outline: 3px solid #ce5deb; outline-offset: 2px; }
+
+@media (max-width: 576px) {
+    .panel { padding: 24px; border-radius: 20px; }
+    .section-title span { font-size: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .type-cursor, .section-title span { animation: none; }
+}
+
+
+/* ---------- Space background (black + live purple stars, drawn by the script in index.html) ---------- */
+body { background-color: #000000; }
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
